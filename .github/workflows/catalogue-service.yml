@@ -3,9 +3,9 @@ name: Catalogue Service
 on:
   push:
     paths:
-      - book-store-app/catalogue-service/**
+      - 'book-store-app/catalogue-service/**'
     branches:
-      - '**'
+      - '*'
 
 jobs:
   build:
