@@ -30,18 +30,18 @@ class ProductRepositoryTest {
     }
 
     @Test
-    void shouldGetProductByCode(){
+    void shouldGetProductByCode() {
         ProductEntity product = productRepository.findByCode("P101").orElseThrow();
         assertThat(product.getCode()).isEqualTo("P101");
         assertThat(product.getName()).isEqualTo("The Midnight Library by Matt Haig");
-        assertThat(product.getDescription()).isEqualTo("Between life and death there is a library, and within that library, the shelves go on forever. Every book offers a chance to try another life you could have lived. Nora Seed finds herself faced with the possibility of changing her life for a new one – undoing regrets and making things right.");
+        assertThat(product.getDescription())
+                .isEqualTo(
+                        "Between life and death there is a library, and within that library, the shelves go on forever. Every book offers a chance to try another life you could have lived. Nora Seed finds herself faced with the possibility of changing her life for a new one – undoing regrets and making things right.");
         assertThat(product.getPrice()).isEqualTo(new BigDecimal("450"));
     }
 
     @Test
-    void shouldReturnEmptyWhenProductCodeNotExists(){
+    void shouldReturnEmptyWhenProductCodeNotExists() {
         assertThat(productRepository.findByCode("invalidProductCode")).isEmpty();
     }
-
-
 }
