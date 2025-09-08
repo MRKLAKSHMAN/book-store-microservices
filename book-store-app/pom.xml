@@ -9,6 +9,7 @@
 
   <modules>
     <module>catalogue-service</module>
+    <module>order-service</module>
   </modules>
 
   <properties>
